@@ -1,6 +1,7 @@
 if __name__ == "__main__":
     import sys
-    sys.path.append("../../")
+    import common
+    sys.path.append(common.ROOT_DIR)
 import unittest
 from sutil import utils
 

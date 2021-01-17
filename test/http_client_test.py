@@ -1,14 +1,15 @@
-FAKE_SERVER_PATH = "sutil/test/fake_server.py"
+FAKE_SERVER_PATH = "test/fake_server.py"
 if __name__ == "__main__":
     import sys
-    sys.path.append("../../")
+    import common
+    sys.path.append(common.ROOT_DIR)
     FAKE_SERVER_PATH = "fake_server.py"
 import unittest
 import subprocess
 import json
 import time
 from sutil.http_client import HttpClient
-from sutil.test.fake_server import GET_RESPONSE, GET_RESPONSE_STR, TIMEOUT, PORT
+from test.fake_server import GET_RESPONSE, GET_RESPONSE_STR, TIMEOUT, PORT
 
 
 class HttpClientTest(unittest.TestCase):

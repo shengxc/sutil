@@ -3,7 +3,7 @@ from unittest import defaultTestLoader
 
 
 def get_allcase():
-    discover = unittest.defaultTestLoader.discover("./sutil", pattern="*_test.py")
+    discover = unittest.defaultTestLoader.discover("./test", pattern="*_test.py")
     suite = unittest.TestSuite()
     suite.addTest(discover)
     return suite
