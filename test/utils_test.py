@@ -21,6 +21,12 @@ class UtilsTest(unittest.TestCase):
         self.assertEqual(1, utils.bound(-1, 1, 3))
         self.assertEqual(5, utils.bound(5, 1, 7))
 
+    def test_chunk(self):
+        self.assertEqual([[1], [2], [3]], list(utils.chunk([1,2,3], 1)))
+        self.assertEqual([[1, 2], [3]], list(utils.chunk([1,2,3], 2)))
+        self.assertEqual([[1, 2, 3]], list(utils.chunk([1,2,3], 3)))
+        self.assertEqual([[1, 2, 3]], list(utils.chunk([1,2,3], 10)))
+
 
 if __name__ == "__main__":
     unittest.main()

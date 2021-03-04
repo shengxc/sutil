@@ -43,3 +43,11 @@ def get_host_ip():
     finally:
         s.close()
     return ip
+
+
+def chunk(data, size):
+    assert size  > 0
+    idx = 0
+    while idx < len(data):
+        yield data[idx: idx+size]
+        idx += size

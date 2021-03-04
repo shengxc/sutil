@@ -38,7 +38,7 @@ class HttpClient:
             fileobjs = []
             try:
                 post_data = data
-                if files is None:
+                if isinstance(post_data, dict) or isinstance(post_data, list):
                     post_data = json.dumps(data, ensure_ascii=False).encode("utf8")
                 file_args, fileobjs = convert_file_args(files)
                 resp = requests.request(method, url, data=post_data,
